@@ -5,6 +5,8 @@
     <title>Page Title</title>
     <link rel="stylesheet" href="Style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/3.0.1/jspdf.umd.min.js"></script>
+    <script src="https://unpkg.com/jspdf-autotable"></script>
     <script src="Scripts.js"></script>
 </head>
 
@@ -40,10 +42,11 @@
             <th style="width:5%;">TaskDate</th>
             <th style="width:5%;">Start Time</th>
             <th style="width:5%;">End Time</th>
+            <th style="width:2%;">Time Driven</th>
             <th style="width:15%;">Tasking</th>
-            <th style="width:5%;">Location</th>
+            <th style="width:10%;">Location</th>
             <th style="width:5%;">Mileage</th>
-            <th style="width:5%;">Added Mileage</th>
+            <th style="width:2%;">Added Mileage</th>
             <th style="width:10%;">Operator</th>
         </thead>
         <tbody>
@@ -53,6 +56,7 @@
 
     <br>
     <button id="submitButton">Get Records</button>
+    <button id="saveButton">Save PDF</button>
 </body>
 
 </html>
