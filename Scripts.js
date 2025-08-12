@@ -34,10 +34,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 totalPagesExp = '{total_pages_count_string}'
 
                 doc.autoTable({
-                    margin: { top: 20 },
+                    margin: { top: 20 , bottom: 20},
                     theme: ["grid"],
                     head: [HEADER.map(col => col.header)],
                     body: record.map(row => HEADER.map(col => row[col.dataKey])),
+                    styles: {minCellHeight: 15, fontSize: 12},
                     willDrawPage: function (data) {
                         // Header
                         doc.setFontSize(20)
@@ -56,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         if (typeof doc.putTotalPages === 'function') {
                             str = str + ' of ' + totalPagesExp
                         }
-                        doc.setFontSize(10)
                         // jsPDF 1.4+ uses getHeight, <1.4 uses .height
                         pageSize = doc.internal.pageSize
                         pageHeight = pageSize.height
@@ -65,6 +65,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         pagewidth = pageSize.width
                             ? pageSize.width
                             : pageSize.getWidth()
+                        doc.text("Authorized by:", 20, pageHeight - 12)
+                        doc.setFontSize(10)
                         doc.text(str, pagewidth - 22, pageHeight - 6)
                     },
                 })
@@ -73,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     doc.putTotalPages(totalPagesExp)
                 }
 
-                // doc.output('dataurlnewwindow');
+                //doc.output('dataurlnewwindow');
                 doc.save(`${vehicleNumber}.pdf`)
             }
         })

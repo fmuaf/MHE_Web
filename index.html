@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>E-Logbook Web</title>
+    <title>Page Title</title>
     <link rel="stylesheet" href="Style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/3.0.1/jspdf.umd.min.js"></script>
@@ -33,8 +33,11 @@
         <option value="50711">50711</option>
         <option value="50712">50712</option>
     </select>
-
     <input type="month" id="calendarInput" value="2025-07" />
+
+    <br>
+    <button id="submitButton">Get Records</button>
+    <button id="saveButton">Save PDF</button>
 
     <table class="table_component" id="recordTable">
         <caption id="mhe">Vehicle</caption>
@@ -53,11 +56,6 @@
 
         </tbody>
     </table>
-
-    <br>
-    <button id="submitButton">Get Records</button>
-    <button id="saveButton">Save PDF</button>
 </body>
-
 
 </html>
