@@ -75,8 +75,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     doc.putTotalPages(totalPagesExp)
                 }
 
-                //doc.output('dataurlnewwindow');
-                doc.save(`${vehicleNumber}.pdf`)
+                doc.output('dataurlnewwindow');
+                //doc.save(`${vehicleNumber}.pdf`)
             }
         })
     }
@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (submitButton) {
         submitButton.addEventListener("click", function () {
             submitButton.disabled = true
+            record = []
             pushDate()
             pushMHE()
 
